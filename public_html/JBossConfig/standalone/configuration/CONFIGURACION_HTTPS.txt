@@ -1,0 +1,15 @@
+CONFIGURACION DE HTTPS PARA SERVICIOS JBOSS
+
+1.- Copiar archivo localhost.keystore en una ruta local
+2.- Agregar el siguiente nodo dentro de los elementos del archivo de configuracion standalone.xml
+
+ "management/security-realms"
+
+
+<security-realm name="SsLRealm">
+	<server-identities>
+		<ssl>
+			<keystore path="PATH_DEL_ARCHIVO_PREVIAMENTE_COPIADO\localhost.keystore" keystore-password="lolito" alias="localhost"/>
+		</ssl>
+	</server-identities>
+</security-realm>
